@@ -59,15 +59,21 @@ public class MyString {
      */
     public static boolean subsetOf(String str1, String str2) {
        if(str1.length()>str2.length())return false;
-       int count=0;
-       for(int i=0;i<str2.length();i++){
-        for(int j=0;j<str1.length();j++){
-        if(str2.charAt(i)==str1.charAt(j))count++; 
+       for (int i = 0; i <= str2.length() - str1.length(); i++) {
+        boolean subSet = true;
+        for (int j = 0; j < str1.length(); j++) {
+            if (str2.charAt(i + j) != str1.charAt(j)) {
+                subSet = false;
+                break;
+            }
         }
+        if (subSet) {
+            return true;
         }
-        if(str1.length()==count) return true;
-        return false;
     }
+    return false;
+}
+  
 
     /** Returns a string which is the same as the given string, with a space
      * character inserted after each character in the given string, except
