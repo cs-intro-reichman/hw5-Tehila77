@@ -59,19 +59,14 @@ public class MyString {
      */
     public static boolean subsetOf(String str1, String str2) {
        if(str1.length()>str2.length())return false;
-       for (int i = 0; i <= str2.length() - str1.length(); i++) {
-        boolean subSet = true;
-        for (int j = 0; j < str1.length(); j++) {
-            if (str2.charAt(i + j) != str1.charAt(j)) {
-                subSet = false;
-                break;
-            }
-        }
-        if (subSet) {
-            return true;
-        }
+    for(int i=0;i<str1.length();i++){
+        char c=str1.charAt(i);
+        if(str2.indexOf(c) == -1) return false;
+        int index= str2.indexOf(c);
+        str2 = str2.substring(0, index) + str2.substring(index + 1);
     }
-    return false;
+
+    return true;
 }
   
 
@@ -126,14 +121,17 @@ public class MyString {
      */
 
     public static String remove(String str1, String str2) {
-        String newStr = ""; 
-        for (int i = 0; i < str2.length(); i++) {
-            char c = str2.charAt(i); 
-            if (str1.indexOf(c) == -1) { 
-                newStr += c;  
+        String strNew="";
+      for(int i=0;i<str2.length();i++) {
+        char c=str2.charAt(i);
+        if(str1.indexOf(c) == -1) {
+            strNew=strNew + c;
+            }else{ 
+                 int index=str1.indexOf(c);
+                str1= str1.substring(0, index)+ str1.substring(index+1, str1.length());
             }
         }
-        return newStr;
+      return strNew; 
     }
 
     /**
