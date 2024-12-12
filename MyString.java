@@ -124,18 +124,22 @@ public class MyString {
      */
     public static String remove(String str1, String str2) {
             // Replace the following statement with your code.
-            String strNew= "";
-            for(int i = 0; i <str2.length(); i++){
-                char c = str2.charAt(i);
-                if(countChar(str1,c) == 0){
-                     strNew+= c;
-                }else{
-                    String str2Started= str1.substring(0,str1.indexOf(c));
-                    String str2Finished = str1.substring(str1.indexOf(c)+1);
-                    str1= str2Started + str2Finished;
+            for (int i = 0; i < str2.length(); i++) {
+                for (int j = 0; j < str1.length(); j++) {
+                    if (str1.charAt(i) == str2.charAt(j)) {
+                        if (j == 0) {
+                            str1 = str1.substring(1);
+                        } else if (j == (str1.length() - 1)) {
+                            str1 = str1.substring(0, j);
+                        } else {
+                            str1 = str1.substring(0, j) + str1.substring(j + 1);
+                        }
+    
+                    }
                 }
+    
             }
-            return strNew;
+            return str1;
         }
 
     /**
