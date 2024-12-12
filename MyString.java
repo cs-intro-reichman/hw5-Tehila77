@@ -81,8 +81,8 @@ public class MyString {
     public static String spacedString(String str) {
        String space= " ";
        String newString="";
-       if(str.equals(""))return newString;
-       newString= space+str.charAt(0)+space;
+       if(str.length()==0)return  space+ str;
+       newString= space+str.charAt(0)+ space;
        for (int i = 1; i <str.length(); i++) {
         if(str.indexOf(i)== (str.length()-1)){
         newString=newString + str.charAt(i);
