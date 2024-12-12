@@ -123,24 +123,23 @@ public class MyString {
      * @return a string consisting of str1 minus all the characters of str2
      */
     public static String remove(String str1, String str2) {
-            // Replace the following statement with your code.
-            for (int i = 0; i < str2.length(); i++) {
-                for (int j = 0; j < str1.length(); j++) {
-                    if (str1.charAt(i) == str2.charAt(j)) {
-                        if (j == 0) {
-                            str1 = str1.substring(1);
-                        } else if (j == (str1.length() - 1)) {
-                            str1 = str1.substring(0, j);
-                        } else {
-                            str1 = str1.substring(0, j) + str1.substring(j + 1);
-                        }
-    
+        for (int i = 0; i < str2.length(); i++) {
+            for (int j = 0; j < str1.length(); j++) {
+                if (str1.charAt(i) == str2.charAt(j)) {
+                    if (j == 0) {
+                        str1 = str1.substring(1);
+                    } else if (j == (str1.length() - 1)) {
+                        str1 = str1.substring(0, j);
+                    } else {
+                        str1 = str1.substring(0, j) + str1.substring(j + 1);
                     }
+
                 }
-    
             }
-            return str1;
+
         }
+        return str1;
+    }
 
     /**
      * Returns a string consisting of the given string, with the given 
