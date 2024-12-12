@@ -122,20 +122,21 @@ public class MyString {
      * @param str2 - a string
      * @return a string consisting of str1 minus all the characters of str2
      */
-
     public static String remove(String str1, String str2) {
-        String strNew="";
-      for(int i=0;i<str2.length();i++) {
-        char c=str2.charAt(i);
-        if(str1.indexOf(c) == -1) {
-            strNew=strNew + c;
-            }else{ 
-                 int index=str1.indexOf(c);
-                str1= str1.substring(0, index)+ str1.substring(index+1, str1.length());
+            // Replace the following statement with your code.
+            String strNew= "";
+            for(int i = 0; i <str2.length(); i++){
+                char c = str2.charAt(i);
+                if(countChar(str1,c) == 0){
+                     strNew+= c;
+                }else{
+                    String str2Started= str1.substring(0,str1.indexOf(c));
+                    String str2Finished = str1.substring(str1.indexOf(c)+1);
+                    str1= str2Started + str2Finished;
+                }
             }
+            return strNew;
         }
-      return strNew; 
-    }
 
     /**
      * Returns a string consisting of the given string, with the given 
