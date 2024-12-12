@@ -22,10 +22,10 @@ public class MyString {
         System.out.println(randomStringOfLetters(5));
         System.out.println(randomStringOfLetters(10));
         System.out.println(randomStringOfLetters(0));
-        System.out.println(remove("meet","committee"));
+        System.out.println(remove("committe","meet"));
         System.out.println(remove("abc","abc"));
-        System.out.println(remove("b","abc"));
-        System.out.println(remove("","hello"));
+        System.out.println(remove("abc","b"));
+        System.out.println(remove("hello",""));
         //// Put your other tests here.
     }
 
@@ -122,21 +122,20 @@ public class MyString {
      * @param str2 - a string
      * @return a string consisting of str1 minus all the characters of str2
      */
+    
     public static String remove(String str1, String str2) {
-        for (int i = 0; i < str2.length(); i++) {
-            for (int j = 0; j < str1.length(); j++) {
-                if (str1.charAt(i) == str2.charAt(j)) {
+        for (int i=0; i<str2.length(); i++) {
+            for (int j=0; j<str1.length(); j++) {
+                if (str2.charAt(i) == str1.charAt(j)) {
                     if (j == 0) {
                         str1 = str1.substring(1);
-                    } else if (j == (str1.length() - 1)) {
-                        str1 = str1.substring(0, j);
+                    } else if (j < str1.length()-1) {
+                        str1 = str1.substring(0, j) + str1.substring(j+1);
                     } else {
-                        str1 = str1.substring(0, j) + str1.substring(j + 1);
+                        str1 = str1.substring(0, j);
                     }
-
                 }
             }
-
         }
         return str1;
     }

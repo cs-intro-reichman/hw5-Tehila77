@@ -57,7 +57,7 @@ public class Scrabble {
         int sum = 0;
         for (int i=0;i<l;i++) {
             char c = word.charAt(i);
-            sum = sum + SCRABBLE_LETTER_VALUES[c - 97];
+            sum = sum + SCRABBLE_LETTER_VALUES[c - 'a'];
         }
         sum = sum*l;
         if (l == HAND_SIZE) {
