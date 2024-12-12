@@ -3,7 +3,7 @@
  * integer, say n. The program then displays n words, drawn randomly from a given dictionary.
  */
 public class Demo {
-
+	
 	// Note 1: "Class variables", like the five class-level variables declared below,
 	// are global variables that can be accessed by any function in the class. It is
 	// customary to name class variables using capital letters and underline characters.
