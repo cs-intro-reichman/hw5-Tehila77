@@ -84,7 +84,7 @@ public class MyString {
        if(str.equals(""))return newString;
        newString= space+str.charAt(0)+space;
        for (int i = 1; i <str.length(); i++) {
-        if(str.indexOf(i)== str.length()-1){
+        if(str.indexOf(i)== (str.length()-1)){
         newString=newString + str.charAt(i);
         }else newString=newString + str.charAt(i)+ space;
        }
