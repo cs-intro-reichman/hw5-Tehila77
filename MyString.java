@@ -79,17 +79,19 @@ public class MyString {
      * @return a string consisting of the characters of str, separated by spaces.
      */
     public static String spacedString(String str) {
-       String space= " ";
-       String newString="";
-       if(str.length()==0)return  space+ str;
-       newString= space+str.charAt(0)+ space;
-       for (int i = 1; i <str.length(); i++) {
-        if(i== (str.length()-1)){
-        newString=newString + str.charAt(i);
-        }else newString=newString + str.charAt(i)+ space;
-       }
-        return newString;
-    }
+            if (str.equals("")) {
+                return str;
+            }
+            String space = " ";
+            String newString="";
+            for (int i = 0; i < str.length() - 1; i++) {
+                newString =newString+ str.charAt(i) +space;
+            }
+            newString =newString+ str.charAt(str.length() - 1);
+            return newString;
+    
+        }
+
     /**
      * Returns a string of n lowercase letters, selected randomly from 
      * the English alphabet 'a', 'b', 'c', ..., 'z'. Note that the same
